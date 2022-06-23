@@ -1,0 +1,125 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace star_sign
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string hisName;
+            string hisJob;
+
+            Console.WriteLine("Напишите свое имя: ");
+            hisName = Console.ReadLine();
+            Console.WriteLine("Напишите Ваше место работы: ");
+            hisJob = Console.ReadLine();
+            Console.WriteLine("Введите день, когда Вы родились: ");
+            int hisDayBorn = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Введите номер месяца Вашего рождения: ");
+            int hisMonthBorn = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine(" И наконец, введите полностью год Вашего рождения: ");
+            int hisYearBorn = Convert.ToInt32(Console.ReadLine());
+
+            string starSign;
+            if (hisMonthBorn == 1 && (hisDayBorn >= 21 & hisDayBorn <= 31) || hisMonthBorn == 2 &&( hisDayBorn > 0 & hisDayBorn <= 19))
+            {
+                starSign = "Водолей";
+            }
+            else if (hisMonthBorn == 2 && (hisDayBorn >= 20 & hisDayBorn <= 29) || hisMonthBorn == 3 &&(hisDayBorn >= 1 & hisDayBorn <= 20))
+            {
+                starSign = "Рыбы";
+            }
+            else if (hisMonthBorn == 3 && (hisDayBorn >= 21 & hisDayBorn <= 31) || hisMonthBorn == 4 && (hisDayBorn >= 1 & hisDayBorn <= 20))
+            {
+                starSign = "Овен";
+            }
+            else if (hisMonthBorn == 4 && (hisDayBorn >= 21 & hisDayBorn <= 30) || hisMonthBorn == 5 && (hisDayBorn >= 1 & hisDayBorn <= 21))
+            {
+                starSign = "Телец";
+            }
+            else if (hisMonthBorn == 5 && (hisDayBorn >= 22 & hisDayBorn <= 31) || hisMonthBorn == 6 && (hisDayBorn >= 1 & hisDayBorn <= 21))
+            {
+                starSign = "Близнецы";
+            }
+            else if (hisMonthBorn == 6 && (hisDayBorn >= 22 & hisDayBorn <= 30) || hisMonthBorn == 7 && (hisDayBorn >= 1 & hisDayBorn <= 22))
+            {
+                starSign = "Рак";
+            }
+            else if (hisMonthBorn == 7 && (hisDayBorn >= 23 & hisDayBorn <= 31) || hisMonthBorn == 8 && (hisDayBorn >= 1 & hisDayBorn <= 21))
+            {
+                starSign = "Лев";
+            }
+            else if (hisMonthBorn == 8 && (hisDayBorn >= 22 & hisDayBorn <= 31) || hisMonthBorn == 9 && (hisDayBorn >= 1 & hisDayBorn <= 23))
+            {
+                starSign = "Дева";
+            }
+            else if (hisMonthBorn == 9 && (hisDayBorn >= 24 & hisDayBorn <= 30) || hisMonthBorn == 10 && (hisDayBorn >= 1 & hisDayBorn <= 23))
+            {
+                starSign = "Весы";
+            }
+            else if (hisMonthBorn == 10 && (hisDayBorn >= 24 & hisDayBorn <= 31) || hisMonthBorn == 11 && (hisDayBorn >= 1 & hisDayBorn <= 22))
+            {
+                starSign = "Скорпион";
+            }
+            else if (hisMonthBorn == 11 && (hisDayBorn >= 23 & hisDayBorn <= 31) || hisMonthBorn == 12 && (hisDayBorn >= 1 & hisDayBorn <= 22))
+            {
+                starSign = "Стрелец";
+            }
+            else if (hisMonthBorn == 12 && (hisDayBorn >= 23 & hisDayBorn <= 31) || hisMonthBorn == 1 && (hisDayBorn >= 1 & hisDayBorn <= 20))
+            {
+                starSign = "Козерог";
+            }
+            else
+            {
+                starSign = "Неверная дата!";
+            }
+
+            Animals animal;
+            animal = (Animals)(hisYearBorn % 12);
+            ColorAnimals color;
+            color = (ColorAnimals)((hisYearBorn % 10 * 5) / 10);
+            SubstanceAnimals substance;
+            substance = (SubstanceAnimals)((hisYearBorn % 10 *5) / 10);
+
+            Console.WriteLine("Ваше имя - " + hisName);
+            Console.WriteLine("Вы родились в год - " + color + " " + substance + " " + animal);
+            Console.WriteLine("Ваш знак зодиака - " + starSign);
+            Console.WriteLine("Вы работаете на " +  hisJob);
+        }
+    }
+    enum Animals
+    {
+        Обезьяны,
+        Петуха,
+        Собаки,
+        Кабана,
+        Крысы,
+        Вола,
+        Тигра,
+        Кролика,
+        Дракона,
+        Змеи,
+        Лошади,
+        Овцы
+    }
+    enum ColorAnimals
+    {
+        Белого,
+        Голубого,
+        Зеленного,
+        Красного,
+        Жёлтого,
+    }
+    enum SubstanceAnimals
+    {
+        Металлического,
+        Водяного,
+        Деревянного,
+        Огненного,
+        Земляного,
+    }
+}
