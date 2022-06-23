@@ -1,0 +1,129 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace star_sign
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string userName;
+            string userJob;
+            int numberAnimals = 12;
+            int numberColorsOrSubstanceAnimals = 5;
+            int totalSumVariableColorsOrSubstanceAnimals = 10;
+
+
+            Console.WriteLine("Напишите свое имя: ");
+            userName = Console.ReadLine();
+            Console.WriteLine("Напишите где Вы работаете: ");
+            userJob = Console.ReadLine();
+            Console.WriteLine("Введите день, когда Вы родились: ");
+            int userDayBorn = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Введите номер месяца Вашего рождения: ");
+            int userMonthBorn = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine(" И наконец, введите полностью год Вашего рождения: ");
+            int userYearBorn = Convert.ToInt32(Console.ReadLine());
+
+            string starSign;
+            if (userMonthBorn == 1 && (userDayBorn >= 21 & userDayBorn <= 31) || userMonthBorn == 2 &&( userDayBorn > 0 & userDayBorn <= 19))
+            {
+                starSign = "Водолей";
+            }
+            else if (userMonthBorn == 2 && (userDayBorn >= 20 & userDayBorn <= 29) || userMonthBorn == 3 &&(userDayBorn >= 1 & userDayBorn <= 20))
+            {
+                starSign = "Рыбы";
+            }
+            else if (userMonthBorn == 3 && (userDayBorn >= 21 & userDayBorn <= 31) || userMonthBorn == 4 && (userDayBorn >= 1 & userDayBorn <= 20))
+            {
+                starSign = "Овен";
+            }
+            else if (userMonthBorn == 4 && (userDayBorn >= 21 & userDayBorn <= 30) || userMonthBorn == 5 && (userDayBorn >= 1 & userDayBorn <= 21))
+            {
+                starSign = "Телец";
+            }
+            else if (userMonthBorn == 5 && (userDayBorn >= 22 & userDayBorn <= 31) || userMonthBorn == 6 && (userDayBorn >= 1 & userDayBorn <= 21))
+            {
+                starSign = "Близнецы";
+            }
+            else if (userMonthBorn == 6 && (userDayBorn >= 22 & userDayBorn <= 30) || userMonthBorn == 7 && (userDayBorn >= 1 & userDayBorn <= 22))
+            {
+                starSign = "Рак";
+            }
+            else if (userMonthBorn == 7 && (userDayBorn >= 23 & userDayBorn <= 31) || userMonthBorn == 8 && (userDayBorn >= 1 & userDayBorn <= 21))
+            {
+                starSign = "Лев";
+            }
+            else if (userMonthBorn == 8 && (userDayBorn >= 22 & userDayBorn <= 31) || userMonthBorn == 9 && (userDayBorn >= 1 & userDayBorn <= 23))
+            {
+                starSign = "Дева";
+            }
+            else if (userMonthBorn == 9 && (userDayBorn >= 24 & userDayBorn <= 30) || userMonthBorn == 10 && (userDayBorn >= 1 & userDayBorn <= 23))
+            {
+                starSign = "Весы";
+            }
+            else if (userMonthBorn == 10 && (userDayBorn >= 24 & userDayBorn <= 31) || userMonthBorn == 11 && (userDayBorn >= 1 & userDayBorn <= 22))
+            {
+                starSign = "Скорпион";
+            }
+            else if (userMonthBorn == 11 && (userDayBorn >= 23 & userDayBorn <= 30) || userMonthBorn == 12 && (userDayBorn >= 1 & userDayBorn <= 22))
+            {
+                starSign = "Стрелец";
+            }
+            else if (userMonthBorn == 12 && (userDayBorn >= 23 & userDayBorn <= 31) || userMonthBorn == 1 && (userDayBorn >= 1 & userDayBorn <= 20))
+            {
+                starSign = "Козерог";
+            }
+            else
+            {
+                starSign = "Неверная дата!";
+            }
+
+            Animals animal;
+            animal = (Animals)(userYearBorn % numberAnimals);
+            ColorAnimals color;
+            color = (ColorAnimals)((userYearBorn % totalSumVariableColorsOrSubstanceAnimals * numberColorsOrSubstanceAnimals) / totalSumVariableColorsOrSubstanceAnimals);
+            SubstanceAnimals substance;
+            substance = (SubstanceAnimals)((userYearBorn % totalSumVariableColorsOrSubstanceAnimals * numberColorsOrSubstanceAnimals) / totalSumVariableColorsOrSubstanceAnimals);
+
+            Console.WriteLine("Ваше имя - " + userName);
+            Console.WriteLine("Вы работаете на " + userJob);
+            Console.WriteLine("Вы родились в год - " + color + " " + substance + " " + animal);
+            Console.WriteLine("Ваш знак зодиака - " + starSign);
+        }
+    }
+    enum Animals
+    {
+        Обезьяны,
+        Петуха,
+        Собаки,
+        Кабана,
+        Крысы,
+        Вола,
+        Тигра,
+        Кролика,
+        Дракона,
+        Змеи,
+        Лошади,
+        Овцы
+    }
+    enum ColorAnimals
+    {
+        Белого,
+        Голубого,
+        Зеленного,
+        Красного,
+        Жёлтого,
+    }
+    enum SubstanceAnimals
+    {
+        Металлического,
+        Водяного,
+        Деревянного,
+        Огненного,
+        Земляного,
+    }
+}
