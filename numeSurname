@@ -1,0 +1,30 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace NameVorName
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string userName;
+            string userSurname;
+
+            Console.WriteLine("Напишите свое имя: ");
+            userName = Console.ReadLine();
+            Console.WriteLine("Напишите свою фамилию: ");
+            userSurname = Console.ReadLine();
+
+            Console.WriteLine($"Ваше имя {userSurname} и ваша фамилия {userName}.");
+
+            string anotherUserName = userName;
+            userName = userSurname;
+            userSurname = anotherUserName;
+
+            Console.WriteLine($"Ваше имя {userSurname} и ваша фамилия {userName}.");
+        }
+    }
+}
