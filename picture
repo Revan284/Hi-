@@ -10,7 +10,7 @@ namespace picture
     {
         static void Main(string[] args)
         {
-            int numbersRows = 3;
+            int picturesInRow = 3;
             int numbersPictures = 52;
 
             int numbersFullRows = numbersPictures / numbersRows;
