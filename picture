@@ -13,8 +13,8 @@ namespace picture
             int picturesInRow = 3;
             int numbersPictures = 52;
 
-            int numbersFullRows = numbersPictures / numbersRows;
-            int numbersFreePictures = numbersPictures % numbersRows; 
+            int numbersFullRows = numbersPictures / picturesInRow;
+            int numbersFreePictures = numbersPictures % picturesInRow; 
             
             Console.WriteLine($"В итоге будет {numbersFullRows} заполненных рядов, а свободных картинок - {numbersFreePictures} ");
         }
