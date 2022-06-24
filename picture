@@ -1,0 +1,22 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace picture
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int numbersRows = 3;
+            int numbersPictures = 52;
+
+            int numbersFullRows = numbersPictures / numbersRows;
+            int numbersFreePictures = numbersPictures % numbersRows; 
+            
+            Console.WriteLine($"В итоге будет {numbersFullRows} заполненных рядов, а свободных картинок - {numbersFreePictures} ");
+        }
+    }
+}
